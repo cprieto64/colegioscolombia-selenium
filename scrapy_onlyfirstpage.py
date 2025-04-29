@@ -86,6 +86,15 @@ class PaginasAmarillasCrawler(CrawlSpider):
     }
     
     def parse_items(self, response):
+        """Parses and extracts information from a web page response, specifically targeting company details.
+        
+        Args:
+            self: The instance of the class containing this method.
+            response (Response): The HTTP response object containing the web page content to be parsed.
+        
+        Returns:
+            None: This method doesn't return a value, but updates a database collection with the extracted information.
+        """
         print("Estoy entrando en la funcion?")      
         sel = Selector(response)
         empresas = sel.xpath('//div[@class="property"]')
